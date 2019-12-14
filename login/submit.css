@@ -1,0 +1,9 @@
+body {
+    background: url(login1.jpg);
+    background-size: cover;
+}
+
+a {
+    color: yellow;
+    font-family: Tahoma, Geneva, sans-serif;
+}

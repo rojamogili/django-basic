@@ -1,0 +1,22 @@
+body {
+    background: url(login1.jpg);
+    background-size: cover;
+    height: 90%
+}
+
+a {
+    color: yellowgreen;
+    font-family: Tahoma, Geneva, sans-serif;
+    margin-left: 30px;
+}
+
+.success {
+    background: rgba(44, 62, 80, 0.7);
+    padding: 50px;
+    margin-top: 120px;
+    height: 200px;
+    margin-left: 160px;
+    margin: 0 auto;
+    margin-top: 120px;
+    width: 240px;
+}
