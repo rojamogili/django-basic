@@ -1,0 +1,11 @@
+body {
+    background: url(login1.jpg);
+    background-size: cover;
+    height: 90%;
+    text-align: center;
+}
+
+a {
+    color: #9acd32;
+    font-family: sans-serif;
+}
