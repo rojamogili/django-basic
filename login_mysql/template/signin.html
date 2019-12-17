@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <title>Signin page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename='login.css')}}">
+    <script>
+        function validateform()
+            {
+                var x=document.forms["validate"]["email"].value;
+                var fn=document.forms["validate"]["Fname"].value;
+                var ln=document.forms["validate"]["Lname"].value;
+                var p=document.forms["validate"]["password"].value;
+                var cp=document.forms["validate"]["cpassword"].value;
+                
+                
+                var re = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+                if (fn=="")
+                {
+                    //alert("Please enter your first name");
+                    document.getElementById('fname_error').innerHTML= "<p style='color:red; font-size:13'>Please enter first name</p>"
+                    return flase;
+                }
+                else if (ln=="")
+                {
+                    //alert("Please enter your last name");
+                    document.getElementById('lname_error').innerHTML= "<p style='color:red; font-size:13'>please enter last name</p>"
+                    return flase;
+                }
+
+                else if (re.test(x)==false)
+                {
+                    //alert("invalid email address");
+                    document.getElementById('email_error').innerHTML= "<p style='color:red; font-size:13'>invalid email</p>"
+                    return false;
+                }
+                var p=document.forms['validate']['password'].value;
+                if (p!=cp)
+                {
+                    //alert("Password not matched");
+                    document.getElementById('pass_error').innerHTML= "<p style='color:red; font-size:13'>password doesn't matched</p>"
+                    return false;
+                }
+            }
+    </script>    
+</head>
+
+<body>
+    <div class="signin">
+        <form name="validate" align="center" onsubmit="return validateform()" method="POST">
+            <h2 style="color: white">Sign In</h2>
+            <input type="text" name="Fname" placeholder="First name">
+            <span> <p id="fname_error"></p></span>
+            <input type="text" name="Lname" placeholder="Last name">
+            <span> <p id="lname_error"></p></span>
+            <input type="text" name="email" placeholder="Email address">
+            <span> <p id="email_error"></p></span>
+            <input type="password" name="password" placeholder="password">
+            <span> <p id="pass_error"></p></span>
+            <input type="password" name="cpassword" placeholder="Conform password">
+            <br><br><br>
+            <a href="login.html"><input type="button" value="Log In"></a>
+            <a href="submit.html"><input type="submit" value="Submit"></a>
+            <br>
+        </form>
+    </div>
+</body>
+
+</html>
